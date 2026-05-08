@@ -13,6 +13,7 @@ import TanStackQueryDevtools from '../integrations/tanstack-query/devtools'
 import appCss from '../styles.css?url'
 
 import type { QueryClient } from '@tanstack/react-query'
+import Navbar from '#/components/navbar'
 
 interface MyRouterContext {
   queryClient: QueryClient
@@ -35,8 +36,8 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
         title: 'Skild - THe Registry for Agentic Intelligence',
       },
       {
-        name : "description",
-        content : "Discover, publish and operate reusable agent capabilities from a route-driven workspace."
+        name: "description",
+        content: "Discover, publish and operate reusable agent capabilities from a route-driven workspace."
       }
     ],
     links: [
@@ -58,6 +59,13 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       </head>
       <body className='font-sans antialiased wrap-anywhere'>
         <ClerkProvider>
+          <div id="root-layout">
+            <header>
+              <div className='frame'>
+                <Navbar />
+              </div>
+            </header>
+          </div>
           {children}
           <TanStackDevtools
             config={{
