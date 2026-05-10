@@ -69,8 +69,10 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 								<Crosshair />
 							</div>
 						</header>
+						<main>
+							<div className="frame">{children}</div>
+						</main>
 					</div>
-					{children}
 					<TanStackDevtools
 						config={{
 							position: "bottom-right",
