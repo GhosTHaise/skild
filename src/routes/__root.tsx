@@ -6,7 +6,7 @@ import {
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import { TanStackDevtools } from "@tanstack/react-devtools";
 
-import { ClerkProvider } from '@clerk/tanstack-react-start'
+import { ClerkProvider } from "@clerk/tanstack-react-start";
 
 import TanStackQueryDevtools from "../integrations/tanstack-query/devtools";
 

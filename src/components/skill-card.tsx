@@ -20,9 +20,11 @@ const SkillCard = ({
 	tags,
 	title,
 	author,
-}: any) => {
-	const [copied
-		, //setCopied
+}: SkillRecord & {
+	author: { username: string; imageUrl: string; email: string | null };
+}) => {
+	const [
+		copied, //setCopied
 	] = useState(false);
 	//const posthog = usePostHog();
 
@@ -125,12 +127,12 @@ const SkillCard = ({
 							to="/skills"
 							className="open"
 							title={`Open ${title}`}
-						/* onClick={() =>
-							posthog.capture("skill_opened", {
-								skill_title: title,
-								skill_category: category,
-							})
-						} */
+							/* onClick={() =>
+						posthog.capture("skill_opened", {
+							skill_title: title,
+							skill_category: category,
+						})
+					} */
 						>
 							<span>Open</span>
 							<ArrowUpRight size={14} />

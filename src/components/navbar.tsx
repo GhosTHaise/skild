@@ -14,11 +14,9 @@ const Navbar = () => {
 			</div>
 
 			<div className="actions">
-				<Show when="signed-out">
-				</Show>
-
+				<Show when="signed-out"></Show>
 			</div>
-		</nav >
+		</nav>
 	);
 };
 
