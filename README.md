@@ -1,4 +1,4 @@
-Welcome to your new TanStack Start app! 
+Welcome to your new TanStack Start app!
 
 # Getting Started
 
@@ -19,7 +19,8 @@ npm run build
 
 ## Testing
 
-This project uses [Vitest](https://vitest.dev/) for testing. You can run the tests with:
+This project uses [Vitest](https://vitest.dev/) for testing. You can run the
+tests with:
 
 ```bash
 npm run test
@@ -40,8 +41,8 @@ If you prefer not to use Tailwind CSS:
 
 ## Linting & Formatting
 
-This project uses [Biome](https://biomejs.dev/) for linting and formatting. The following scripts are available:
-
+This project uses [Biome](https://biomejs.dev/) for linting and formatting. The
+following scripts are available:
 
 ```bash
 npm run lint
@@ -49,20 +50,22 @@ npm run format
 npm run check
 ```
 
-
 ## Deploy with Nitro
 
-This project uses Nitro as a generic server adapter, so it can run on any Node-compatible host.
+This project uses Nitro as a generic server adapter, so it can run on any
+Node-compatible host.
 
 ```bash
 npm run build
 node dist/server/index.mjs
 ```
 
-The build output is a self-contained Node server. To deploy, push the `dist/` directory to your host (Render, Fly.io, your own VPS, etc.) and run the server command above.
+The build output is a self-contained Node server. To deploy, push the `dist/`
+directory to your host (Render, Fly.io, your own VPS, etc.) and run the server
+command above.
 
-For host-specific presets (Vercel, Netlify, Cloudflare, AWS Lambda, etc.) and tuning, see https://v3.nitro.build/deploy.
-
+For host-specific presets (Vercel, Netlify, Cloudflare, AWS Lambda, etc.) and
+tuning, see https://v3.nitro.build/deploy.
 
 ## Setting up Clerk
 
@@ -71,12 +74,15 @@ For host-specific presets (Vercel, Netlify, Cloudflare, AWS Lambda, etc.) and tu
 3. Set it in your `.env.local`:
    ```bash
    VITE_CLERK_PUBLISHABLE_KEY=pk_test_...
+   CLERK_PUBLISHABLE_KEY=pk_test_...
+   CLERK_SECRET_KEY=sk_test_...
    ```
 4. Visit the demo route at `/demo/clerk` once `npm run dev` is running
 
 ### What's wired up
 
-- **`<ClerkProvider>`** at the app root (`src/integrations/clerk/provider.tsx`) handles auth context for the whole tree
+- **`<ClerkProvider>`** at the app root (`src/integrations/clerk/provider.tsx`)
+  handles auth context for the whole tree
 - **`<SignInButton>` / `<UserButton>`** in the header swap based on auth state
 - **`/demo/clerk`** shows Clerk's prebuilt sign-in UI and a signed-in greeting
 
@@ -85,7 +91,7 @@ For host-specific presets (Vercel, Netlify, Cloudflare, AWS Lambda, etc.) and tu
 Wrap any component in `<SignedIn>` / `<SignedOut>`:
 
 ```tsx
-import { SignedIn, SignedOut, RedirectToSignIn } from '@clerk/clerk-react'
+import { RedirectToSignIn, SignedIn, SignedOut } from "@clerk/clerk-react";
 
 function ProtectedPage() {
   return (
@@ -97,18 +103,20 @@ function ProtectedPage() {
         <RedirectToSignIn />
       </SignedOut>
     </>
-  )
+  );
 }
 ```
 
-For server-side checks (route loaders, server functions), see the Clerk docs on [`auth()`](https://clerk.com/docs/references/backend/auth).
+For server-side checks (route loaders, server functions), see the Clerk docs on
+[`auth()`](https://clerk.com/docs/references/backend/auth).
 
 ### Production checklist
 
-- Replace the test keys with **production keys** from a dedicated production Clerk instance
+- Replace the test keys with **production keys** from a dedicated production
+  Clerk instance
 - Configure your production domain under **Domains** in the Clerk dashboard
-- Set up social providers (Google, GitHub, etc.) under **User & Authentication → Social Connections**
-
+- Set up social providers (Google, GitHub, etc.) under **User & Authentication →
+  Social Connections**
 
 ## Shadcn
 
@@ -118,23 +126,25 @@ Add components using the latest version of [Shadcn](https://ui.shadcn.com/).
 pnpm dlx shadcn@latest add button
 ```
 
-
-
 ## Routing
 
-This project uses [TanStack Router](https://tanstack.com/router) with file-based routing. Routes are managed as files in `src/routes`.
+This project uses [TanStack Router](https://tanstack.com/router) with file-based
+routing. Routes are managed as files in `src/routes`.
 
 ### Adding A Route
 
-To add a new route to your application just add a new file in the `./src/routes` directory.
+To add a new route to your application just add a new file in the `./src/routes`
+directory.
 
 TanStack will automatically generate the content of the route file for you.
 
-Now that you have two routes you can use a `Link` component to navigate between them.
+Now that you have two routes you can use a `Link` component to navigate between
+them.
 
 ### Adding Links
 
-To use SPA (Single Page Application) navigation you will need to import the `Link` component from `@tanstack/react-router`.
+To use SPA (Single Page Application) navigation you will need to import the
+`Link` component from `@tanstack/react-router`.
 
 ```tsx
 import { Link } from "@tanstack/react-router";
@@ -143,28 +153,32 @@ import { Link } from "@tanstack/react-router";
 Then anywhere in your JSX you can use it like so:
 
 ```tsx
-<Link to="/about">About</Link>
+<Link to="/about">About</Link>;
 ```
 
 This will create a link that will navigate to the `/about` route.
 
-More information on the `Link` component can be found in the [Link documentation](https://tanstack.com/router/v1/docs/framework/react/api/router/linkComponent).
+More information on the `Link` component can be found in the
+[Link documentation](https://tanstack.com/router/v1/docs/framework/react/api/router/linkComponent).
 
 ### Using A Layout
 
-In the File Based Routing setup the layout is located in `src/routes/__root.tsx`. Anything you add to the root route will appear in all the routes. The route content will appear in the JSX where you render `{children}` in the `shellComponent`.
+In the File Based Routing setup the layout is located in
+`src/routes/__root.tsx`. Anything you add to the root route will appear in all
+the routes. The route content will appear in the JSX where you render
+`{children}` in the `shellComponent`.
 
 Here is an example layout that includes a header:
 
 ```tsx
-import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
+import { createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 
 export const Route = createRootRoute({
   head: () => ({
     meta: [
-      { charSet: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { title: 'My App' },
+      { charSet: "utf-8" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { title: "My App" },
     ],
   }),
   shellComponent: ({ children }) => (
@@ -184,90 +198,99 @@ export const Route = createRootRoute({
       </body>
     </html>
   ),
-})
+});
 ```
 
-More information on layouts can be found in the [Layouts documentation](https://tanstack.com/router/latest/docs/framework/react/guide/routing-concepts#layouts).
+More information on layouts can be found in the
+[Layouts documentation](https://tanstack.com/router/latest/docs/framework/react/guide/routing-concepts#layouts).
 
 ## Server Functions
 
-TanStack Start provides server functions that allow you to write server-side code that seamlessly integrates with your client components.
+TanStack Start provides server functions that allow you to write server-side
+code that seamlessly integrates with your client components.
 
 ```tsx
-import { createServerFn } from '@tanstack/react-start'
+import { createServerFn } from "@tanstack/react-start";
 
 const getServerTime = createServerFn({
-  method: 'GET',
+  method: "GET",
 }).handler(async () => {
-  return new Date().toISOString()
-})
+  return new Date().toISOString();
+});
 
 // Use in a component
 function MyComponent() {
-  const [time, setTime] = useState('')
-  
+  const [time, setTime] = useState("");
+
   useEffect(() => {
-    getServerTime().then(setTime)
-  }, [])
-  
-  return <div>Server time: {time}</div>
+    getServerTime().then(setTime);
+  }, []);
+
+  return <div>Server time: {time}</div>;
 }
 ```
 
 ## API Routes
 
-You can create API routes by using the `server` property in your route definitions:
+You can create API routes by using the `server` property in your route
+definitions:
 
 ```tsx
-import { createFileRoute } from '@tanstack/react-router'
-import { json } from '@tanstack/react-start'
+import { createFileRoute } from "@tanstack/react-router";
+import { json } from "@tanstack/react-start";
 
-export const Route = createFileRoute('/api/hello')({
+export const Route = createFileRoute("/api/hello")({
   server: {
     handlers: {
-      GET: () => json({ message: 'Hello, World!' }),
+      GET: () => json({ message: "Hello, World!" }),
     },
   },
-})
+});
 ```
 
 ## Data Fetching
 
-There are multiple ways to fetch data in your application. You can use TanStack Query to fetch data from a server. But you can also use the `loader` functionality built into TanStack Router to load the data for a route before it's rendered.
+There are multiple ways to fetch data in your application. You can use TanStack
+Query to fetch data from a server. But you can also use the `loader`
+functionality built into TanStack Router to load the data for a route before
+it's rendered.
 
 For example:
 
 ```tsx
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute } from "@tanstack/react-router";
 
-export const Route = createFileRoute('/people')({
+export const Route = createFileRoute("/people")({
   loader: async () => {
-    const response = await fetch('https://swapi.dev/api/people')
-    return response.json()
+    const response = await fetch("https://swapi.dev/api/people");
+    return response.json();
   },
   component: PeopleComponent,
-})
+});
 
 function PeopleComponent() {
-  const data = Route.useLoaderData()
+  const data = Route.useLoaderData();
   return (
     <ul>
-      {data.results.map((person) => (
-        <li key={person.name}>{person.name}</li>
-      ))}
+      {data.results.map((person) => <li key={person.name}>{person.name}</li>)}
     </ul>
-  )
+  );
 }
 ```
 
-Loaders simplify your data fetching logic dramatically. Check out more information in the [Loader documentation](https://tanstack.com/router/latest/docs/framework/react/guide/data-loading#loader-parameters).
+Loaders simplify your data fetching logic dramatically. Check out more
+information in the
+[Loader documentation](https://tanstack.com/router/latest/docs/framework/react/guide/data-loading#loader-parameters).
 
 # Demo files
 
-Files prefixed with `demo` can be safely deleted. They are there to provide a starting point for you to play around with the features you've installed.
+Files prefixed with `demo` can be safely deleted. They are there to provide a
+starting point for you to play around with the features you've installed.
 
 # Learn More
 
-You can learn more about all of the offerings from TanStack in the [TanStack documentation](https://tanstack.com).
+You can learn more about all of the offerings from TanStack in the
+[TanStack documentation](https://tanstack.com).
 
-For TanStack Start specific documentation, visit [TanStack Start](https://tanstack.com/start).
+For TanStack Start specific documentation, visit
+[TanStack Start](https://tanstack.com/start).
