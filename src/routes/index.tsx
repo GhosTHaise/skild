@@ -3,13 +3,15 @@ import { dummySkills } from "#/lib/dummy-skills";
 import { createFileRoute, Link } from "@tanstack/react-router";
 //import { createServerFn } from "@tanstack/react-start";
 import { Terminal } from "lucide-react";
-//import { usePostHog } from "posthog-js/react";
+import { usePostHog } from "@posthog/react";
 //import { getSkills } from "#/dataconnect-generated";
 //import { dataConnect } from "#/lib/firebase";
 
 export const Route = createFileRoute("/")({ component: Home });
 
 function Home() {
+	const posthog = usePostHog();
+
 	return (
 		<div id="home">
 			<section className="hero">
