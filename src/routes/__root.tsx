@@ -1,21 +1,18 @@
+import { ClerkProvider, useUser } from "@clerk/tanstack-react-start";
+import { TanStackDevtools } from "@tanstack/react-devtools";
+import type { QueryClient } from "@tanstack/react-query";
 import {
+	createRootRouteWithContext,
 	HeadContent,
 	Scripts,
-	createRootRouteWithContext,
 } from "@tanstack/react-router";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
-import { TanStackDevtools } from "@tanstack/react-devtools";
-
-import { ClerkProvider } from "@clerk/tanstack-react-start";
-import { PostHogProvider } from "@posthog/react";
-
+import { PostHogProvider, usePostHog } from "posthog-js/react";
+import { useEffect } from "react";
 import TanStackQueryDevtools from "../integrations/tanstack-query/devtools";
-
 import appCss from "../styles.css?url";
-
-import type { QueryClient } from "@tanstack/react-query";
-import Navbar from "#/components/navbar";
 import Crosshair from "#/components/crosshair";
+import Navbar from "#/components/navbar";
 
 interface MyRouterContext {
 	queryClient: QueryClient;
@@ -34,12 +31,12 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
 				content: "width=device-width, initial-scale=1",
 			},
 			{
-				title: "Skild - THe Registry for Agentic Intelligence",
+				title: "Skild - The Registry for Agentic Intelligence",
 			},
 			{
 				name: "description",
 				content:
-					"Discover, publish and operate reusable agent capabilities from a route-driven workspace.",
+					"Discover, publish, and operate reusable agent capabilities from a route-driven workspace.",
 			},
 		],
 		links: [
@@ -52,19 +49,36 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
 	shellComponent: RootDocument,
 });
 
+function PostHogUserIdentifier() {
+	const { user, isSignedIn } = useUser();
+	const posthog = usePostHog();
+
+	useEffect(() => {
+		if (isSignedIn && user) {
+			posthog.identify(user.id, {
+				email: user.primaryEmailAddress?.emailAddress,
+				name: user.fullName,
+			});
+		} else if (isSignedIn === false) {
+			posthog.reset();
+		}
+	}, [isSignedIn, user, posthog]);
+
+	return null;
+}
+
 function RootDocument({ children }: { children: React.ReactNode }) {
 	return (
-		<html lang="en">
+		<html lang="en" suppressHydrationWarning>
 			<head>
-				{/* // biome-ignore-all lint: this is intentional */}
 				<script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
 				<HeadContent />
 			</head>
 			<body className="font-sans antialiased wrap-anywhere">
 				<PostHogProvider
-					apiKey={import.meta.env.VITE_PUBLIC_POSTHOG_PROJECT_TOKEN!}
+					apiKey={import.meta.env.VITE_PUBLIC_POSTHOG_PROJECT_TOKEN}
 					options={{
-						api_host: "/ingest",
+						//api_host: "/ingest",
 						ui_host:
 							import.meta.env.VITE_PUBLIC_POSTHOG_HOST ||
 							"https://us.posthog.com",
@@ -74,6 +88,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 					}}
 				>
 					<ClerkProvider>
+						<PostHogUserIdentifier />
 						<div id="root-layout">
 							<header>
 								<div className="frame">
@@ -82,10 +97,12 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 									<Crosshair />
 								</div>
 							</header>
+
 							<main>
 								<div className="frame">{children}</div>
 							</main>
 						</div>
+
 						<TanStackDevtools
 							config={{
 								position: "bottom-right",
