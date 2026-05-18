@@ -38,3 +38,39 @@ I0518 19:33:05.310097  405092 dev.go:104] Listening on address (HTTP + gRPC): 12
  {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0518 19:33:05.302726  405092 load.go:31] Reloading schema and connectors...\nI0518 19:33:05.305975  405092 control.go:100] [projects/emulator/locations/emulator/services/skild-62214-service 8222] UpdateResources(): done\nMain schema: sources: schema/schema.gql [0B] \nConnector \"example\": sources: \nE0518 19:33:05.309238  405092 load.go:95] Errors generating SDK: [connector \"example\"]: invalid Data Connect Connector no query found in connector\nI0518 19:33:05.309491  405092 collector.go:107] schema extensions wrote into \"/home/ghost/Documents/dev/node/skild/dataconnect/.dataconnect/schema\"\nGenerated sources: prelude.gql [82799B] \nI0518 19:33:05.309506  405092 load.go:109] Finished reloading\nI0518 19:33:05.310097  405092 dev.go:104] Listening on address (HTTP + gRPC): 127.0.0.1:50001\n"}}
 [debug] [2026-05-18T16:33:05.331Z] I0518 19:33:05.330931  405092 engine.go:209] [projects/emulator/locations/emulator/services/skild-62214-service 8222] ExecuteGraphqlRead query IntrospectionQuery: succeeded. 
  {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0518 19:33:05.330931  405092 engine.go:209] [projects/emulator/locations/emulator/services/skild-62214-service 8222] ExecuteGraphqlRead query IntrospectionQuery: succeeded. \n"}}
+[debug] [2026-05-18T16:35:25.310Z] I0518 19:35:25.310216  405092 load.go:31] Reloading schema and connectors...
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0518 19:35:25.310216  405092 load.go:31] Reloading schema and connectors...\n"}}
+[debug] [2026-05-18T16:35:25.313Z] I0518 19:35:25.313373  405092 control.go:100] [projects/emulator/locations/emulator/services/skild-62214-service 81ab] UpdateResources(): done
+Main schema: sources: schema/schema.gql [122B] 
+Connector "example": sources: 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0518 19:35:25.313373  405092 control.go:100] [projects/emulator/locations/emulator/services/skild-62214-service 81ab] UpdateResources(): done\nMain schema: sources: schema/schema.gql [122B] \nConnector \"example\": sources: \n"}}
+[debug] [2026-05-18T16:35:25.316Z] E0518 19:35:25.316220  405092 load.go:95] Errors generating SDK: [connector "example"]: invalid Data Connect Connector no query found in connector
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"E0518 19:35:25.316220  405092 load.go:95] Errors generating SDK: [connector \"example\"]: invalid Data Connect Connector no query found in connector\n"}}
+[debug] [2026-05-18T16:35:25.316Z] I0518 19:35:25.316519  405092 collector.go:107] schema extensions wrote into "/home/ghost/Documents/dev/node/skild/dataconnect/.dataconnect/schema"
+Generated sources: main/input.gql [4962B] main/relation.gql [1582B] main/query.gql [1175B] main/mutation.gql [3149B] prelude.gql [82799B] 
+I0518 19:35:25.316534  405092 load.go:109] Finished reloading
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0518 19:35:25.316519  405092 collector.go:107] schema extensions wrote into \"/home/ghost/Documents/dev/node/skild/dataconnect/.dataconnect/schema\"\nGenerated sources: main/input.gql [4962B] main/relation.gql [1582B] main/query.gql [1175B] main/mutation.gql [3149B] prelude.gql [82799B] \nI0518 19:35:25.316534  405092 load.go:109] Finished reloading\n"}}
+[debug] [2026-05-18T16:35:45.319Z] I0518 19:35:45.319461  405092 load.go:31] Reloading schema and connectors...
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0518 19:35:45.319461  405092 load.go:31] Reloading schema and connectors...\n"}}
+[debug] [2026-05-18T16:35:45.323Z] I0518 19:35:45.323215  405092 control.go:100] [projects/emulator/locations/emulator/services/skild-62214-service 68d2] UpdateResources(): done
+Main schema: sources: schema/schema.gql [142B] 
+Connector "example": sources: 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0518 19:35:45.323215  405092 control.go:100] [projects/emulator/locations/emulator/services/skild-62214-service 68d2] UpdateResources(): done\nMain schema: sources: schema/schema.gql [142B] \nConnector \"example\": sources: \n"}}
+[debug] [2026-05-18T16:35:45.327Z] E0518 19:35:45.327206  405092 load.go:95] Errors generating SDK: [connector "example"]: invalid Data Connect Connector no query found in connector
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"E0518 19:35:45.327206  405092 load.go:95] Errors generating SDK: [connector \"example\"]: invalid Data Connect Connector no query found in connector\n"}}
+[debug] [2026-05-18T16:35:45.327Z] I0518 19:35:45.327546  405092 collector.go:107] schema extensions wrote into "/home/ghost/Documents/dev/node/skild/dataconnect/.dataconnect/schema"
+Generated sources: main/mutation.gql [3149B] main/input.gql [5648B] main/relation.gql [1952B] main/query.gql [1175B] prelude.gql [82799B] 
+I0518 19:35:45.327563  405092 load.go:109] Finished reloading
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0518 19:35:45.327546  405092 collector.go:107] schema extensions wrote into \"/home/ghost/Documents/dev/node/skild/dataconnect/.dataconnect/schema\"\nGenerated sources: main/mutation.gql [3149B] main/input.gql [5648B] main/relation.gql [1952B] main/query.gql [1175B] prelude.gql [82799B] \nI0518 19:35:45.327563  405092 load.go:109] Finished reloading\n"}}
+[debug] [2026-05-18T16:37:45.319Z] I0518 19:37:45.319430  405092 load.go:31] Reloading schema and connectors...
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0518 19:37:45.319430  405092 load.go:31] Reloading schema and connectors...\n"}}
+[debug] [2026-05-18T16:37:45.325Z] I0518 19:37:45.325570  405092 control.go:100] [projects/emulator/locations/emulator/services/skild-62214-service fe43] UpdateResources(): done
+Main schema: sources: schema/schema.gql [492B] 
+Connector "example": sources: 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0518 19:37:45.325570  405092 control.go:100] [projects/emulator/locations/emulator/services/skild-62214-service fe43] UpdateResources(): done\nMain schema: sources: schema/schema.gql [492B] \nConnector \"example\": sources: \n"}}
+[debug] [2026-05-18T16:37:45.330Z] E0518 19:37:45.330656  405092 load.go:95] Errors generating SDK: [connector "example"]: invalid Data Connect Connector no query found in connector
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"E0518 19:37:45.330656  405092 load.go:95] Errors generating SDK: [connector \"example\"]: invalid Data Connect Connector no query found in connector\n"}}
+[debug] [2026-05-18T16:37:45.331Z] I0518 19:37:45.331022  405092 collector.go:107] schema extensions wrote into "/home/ghost/Documents/dev/node/skild/dataconnect/.dataconnect/schema"
+Generated sources: main/input.gql [16026B] main/relation.gql [6578B] prelude.gql [82799B] main/query.gql [2404B] main/mutation.gql [6444B] main/implicit.gql [266B] 
+I0518 19:37:45.331038  405092 load.go:109] Finished reloading
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0518 19:37:45.331022  405092 collector.go:107] schema extensions wrote into \"/home/ghost/Documents/dev/node/skild/dataconnect/.dataconnect/schema\"\nGenerated sources: main/input.gql [16026B] main/relation.gql [6578B] prelude.gql [82799B] main/query.gql [2404B] main/mutation.gql [6444B] main/implicit.gql [266B] \nI0518 19:37:45.331038  405092 load.go:109] Finished reloading\n"}}
