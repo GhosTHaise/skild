@@ -1,0 +1,73 @@
+# This is a file for you to write an un-named mutation. 
+# Only one un-named mutation is allowed per file.
+mutation {
+  skill1: skill_insert(
+    data: {
+      id: "11111111222233334444555555555551"
+      authorClerkId: "user_3DdVabsBHnckJasrZMHWCyp09go"
+      createdAt: "2026-04-14T09:30:00.000Z"
+      description: "Generate clean TypeScript snippets and scaffold common app patterns."
+      installCommand: "npx skild add write-code"
+      promptConfig: "You are a proffessional performance optimizer"
+      tags: ["typescript", "react", "boilerplate"]
+      title: "Write Code"
+      usageExample: ""
+    }
+  )
+
+  skill2: skill_insert(
+    data: {
+      id: "11111111222233334444555555555552"
+      authorClerkId: "user_3DdVabsBHnckJasrZMHWCyp09go"
+      createdAt: "2026-04-14T09:45:00.000Z"
+      description: "Improve structure while preserving behavior with focused, low-risk edits."
+      installCommand: "npx skild add refactor-safely"
+      promptConfig: ""
+      tags: ["refactor", "maintainability", "clean-code"]
+      title: "Refactor Safely"
+      usageExample: ""
+    }
+  )
+
+  skill3: skill_insert(
+    data: {
+      id: "11111111222233334444555555555553"
+      authorClerkId: "user_3DdVabsBHnckJasrZMHWCyp09go"
+      createdAt: "2026-04-14T10:00:00.000Z"
+      description: "Create unit and integration test cases for edge paths and regressions."
+      installCommand: "npx skild add test-coverage-boost"
+      promptConfig: ""
+      tags: ["vitest", "testing-library", "coverage"]
+      title: "Test Coverage Boost"
+      usageExample: ""
+    }
+  )
+
+  skill4: skill_insert(
+    data: {
+      id: "11111111222233334444555555555554"
+      authorClerkId: "user_3DdVabsBHnckJasrZMHWCyp09go"
+      createdAt: "2026-04-14T10:15:00.000Z"
+      description: "Draft typed request and response contracts for REST endpoints."
+      installCommand: "npx skild add api-contract-builder"
+      promptConfig: ""
+      tags: ["api", "zod", "contracts"]
+      title: "API Contract Builder"
+      usageExample: ""
+    }
+  )
+
+  skill5: skill_insert(
+    data: {
+      id: "11111111222233334444555555555555"
+      authorClerkId: "user_3DdVabsBHnckJasrZMHWCyp09go"
+      createdAt: "2026-04-14T10:30:00.000Z"
+      description: "Identify render bottlenecks and optimize expensive client-side work."
+      installCommand: "npx skild add performance-tuner"
+      promptConfig: ""
+      tags: ["profiling", "memoization", "web-vitals"]
+      title: "Performance Tuner"
+      usageExample: ""
+    }
+  )
+}
