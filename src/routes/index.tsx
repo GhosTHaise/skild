@@ -1,16 +1,35 @@
 import SkillCard from "#/components/skill-card";
-import { dummySkills } from "#/lib/dummy-skills";
 import { createFileRoute, Link } from "@tanstack/react-router";
 //import { createServerFn } from "@tanstack/react-start";
 import { Terminal } from "lucide-react";
 import { usePostHog } from "@posthog/react";
+import { createServerFn } from "@tanstack/react-start";
+import { getSkills } from "#/dataconnect-generated";
+import { dataConnect } from "#/lib/firebase";
 //import { getSkills } from "#/dataconnect-generated";
 //import { dataConnect } from "#/lib/firebase";
 
-export const Route = createFileRoute("/")({ component: Home });
+const getSkillsFn = createServerFn({ method: "GET" }).handler(async () => {
+	try {
+		const { data } = await getSkills(dataConnect, {
+			searchTerm: "",
+			limit: 10,
+		});
+		return data.skills;
+	} catch (error) {
+		console.error(error);
+		return [];
+	}
+});
+
+export const Route = createFileRoute("/")({
+	component: Home,
+	loader: () => getSkillsFn(),
+});
 
 function Home() {
 	const posthog = usePostHog();
+	const skills = Route.useLoaderData();
 
 	return (
 		<div id="home">
@@ -58,9 +77,9 @@ function Home() {
 				</div>
 
 				<div>
-					{dummySkills.length > 0 ? (
+					{skills.length > 0 ? (
 						<div className="skills-grid">
-							{dummySkills.map((skill) => (
+							{skills.map((skill) => (
 								<SkillCard key={skill.id} {...skill} />
 							))}
 						</div>

@@ -9,9 +9,9 @@ import {
 } from "lucide-react";
 import { usePostHog } from "@posthog/react";
 import { useState } from "react";
-//import type { GetSkillsData } from "#/dataconnect-generated";
+import type { GetSkillsData } from "#/dataconnect-generated";
 
-//type SkillCardProps = GetSkillsData["skills"][number];
+type SkillCardProps = GetSkillsData["skills"][number];
 
 const SkillCard = ({
 	createdAt,
@@ -20,9 +20,7 @@ const SkillCard = ({
 	tags,
 	title,
 	author,
-}: SkillRecord & {
-	author: { username: string; imageUrl: string; email: string | null };
-}) => {
+}: SkillCardProps) => {
 	const [copied, setCopied] = useState(false);
 	const posthog = usePostHog();
 
