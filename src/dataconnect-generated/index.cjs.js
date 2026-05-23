@@ -46,6 +46,6 @@ exports.getSkills = function getSkills(dcOrVars, varsOrOptions, options) {
 	);
 	return executeQuery(
 		getSkillsRef(dcInstance, inputVars),
-		inputOpts?.fetchPolicy,
+		inputOpts && inputOpts.fetchPolicy,
 	);
 };

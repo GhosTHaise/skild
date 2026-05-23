@@ -1,29 +1,13 @@
-I0522 21:15:48.179170   12608 load.go:31] Reloading schema and connectors...
-I0522 21:15:48.184614   12608 control.go:100] [projects/emulator/locations/emulator/services/skild-62214-service f336] UpdateResources(): done
-Main schema: sources: schema/schema.gql [492B] 
-Connector "example": sources: 
-E0522 21:15:48.188132   12608 load.go:95] Errors generating SDK: [connector "example"]: invalid Data Connect Connector no query found in connector
-I0522 21:15:48.188448   12608 collector.go:107] schema extensions wrote into "/home/ghost/Documents/dev/node/skild/dataconnect/.dataconnect/schema"
-Generated sources: main/query.gql [2404B] main/mutation.gql [6444B] prelude.gql [82799B] main/implicit.gql [266B] main/input.gql [16026B] main/relation.gql [6578B] 
-I0522 21:15:48.188465   12608 load.go:109] Finished reloading
-I0522 21:15:48.189310   12608 dev.go:104] Listening on address (HTTP + gRPC): 127.0.0.1:50001
-I0522 21:15:48.207384   12608 engine.go:209] [projects/emulator/locations/emulator/services/skild-62214-service f336] ExecuteGraphqlRead query IntrospectionQuery: succeeded. 
-E0522 22:23:58.198471   12608 watch.go:40] Failed to load config from "/home/ghost/Documents/dev/node/skild/dataconnect": could not read connector.yaml at `/home/ghost/Documents/dev/node/skild/dataconnect/connectors/connector.yaml`: open /home/ghost/Documents/dev/node/skild/dataconnect/connectors/connector.yaml: no such file or directory
-E0522 22:24:08.193382   12608 watch.go:40] Failed to load config from "/home/ghost/Documents/dev/node/skild/dataconnect": could not read connector.yaml at `/home/ghost/Documents/dev/node/skild/dataconnect/connectors/connector.yaml`: open /home/ghost/Documents/dev/node/skild/dataconnect/connectors/connector.yaml: no such file or directory
-E0522 22:24:18.189554   12608 watch.go:40] Failed to load config from "/home/ghost/Documents/dev/node/skild/dataconnect": could not read connector.yaml at `/home/ghost/Documents/dev/node/skild/dataconnect/connectors/connector.yaml`: open /home/ghost/Documents/dev/node/skild/dataconnect/connectors/connector.yaml: no such file or directory
-E0522 22:24:28.198570   12608 watch.go:40] Failed to load config from "/home/ghost/Documents/dev/node/skild/dataconnect": could not read connector.yaml at `/home/ghost/Documents/dev/node/skild/dataconnect/connectors/connector.yaml`: open /home/ghost/Documents/dev/node/skild/dataconnect/connectors/connector.yaml: no such file or directory
-E0522 22:24:38.198248   12608 watch.go:40] Failed to load config from "/home/ghost/Documents/dev/node/skild/dataconnect": could not read connector.yaml at `/home/ghost/Documents/dev/node/skild/dataconnect/connectors/connector.yaml`: open /home/ghost/Documents/dev/node/skild/dataconnect/connectors/connector.yaml: no such file or directory
-E0522 22:24:48.189384   12608 watch.go:40] Failed to load config from "/home/ghost/Documents/dev/node/skild/dataconnect": could not read connector.yaml at `/home/ghost/Documents/dev/node/skild/dataconnect/connectors/connector.yaml`: open /home/ghost/Documents/dev/node/skild/dataconnect/connectors/connector.yaml: no such file or directory
-E0522 22:24:58.198251   12608 watch.go:40] Failed to load config from "/home/ghost/Documents/dev/node/skild/dataconnect": could not read connector.yaml at `/home/ghost/Documents/dev/node/skild/dataconnect/connectors/connector.yaml`: open /home/ghost/Documents/dev/node/skild/dataconnect/connectors/connector.yaml: no such file or directory
-E0522 22:25:08.197983   12608 watch.go:40] Failed to load config from "/home/ghost/Documents/dev/node/skild/dataconnect": could not read connector.yaml at `/home/ghost/Documents/dev/node/skild/dataconnect/connectors/connector.yaml`: open /home/ghost/Documents/dev/node/skild/dataconnect/connectors/connector.yaml: no such file or directory
-I0522 22:25:18.189258   12608 load.go:31] Reloading schema and connectors...
-I0522 22:25:18.194071   12608 control.go:100] [projects/emulator/locations/emulator/services/skild-62214-service 4ee2] UpdateResources(): done
+I0523 19:52:41.111041   10387 load.go:31] Reloading schema and connectors...
+I0523 19:52:41.115266   10387 control.go:100] [projects/emulator/locations/emulator/services/skild-62214-service 237c] UpdateResources(): done
 Main schema: sources: schema/schema.gql [492B] 
 Connector "example": sources: connectors/query.gql [462B] 
-I0522 22:25:18.200254   12608 codegen.go:101] [connector "example" javascriptSdk] Generating sources into "/home/ghost/Documents/dev/node/skild/src/dataconnect-generated"
-I0522 22:25:18.205436   12608 collector.go:107] schema extensions wrote into "/home/ghost/Documents/dev/node/skild/dataconnect/.dataconnect/schema"
-Generated sources: prelude.gql [82799B] main/implicit.gql [266B] main/input.gql [16026B] main/relation.gql [6578B] main/query.gql [2404B] main/mutation.gql [6444B] 
-I0522 22:25:18.205741   12608 collector.go:107] connector "example" javascriptSdk wrote into "/home/ghost/Documents/dev/node/skild/src/dataconnect-generated"
-Generated sources: .guides/usage.md [1571B] package.json [853B] react/esm/package.json [17B] .guides/setup.md [1682B] .guides/config.json [236B] index.d.ts [1661B] esm/package.json [17B] index.cjs.js [1078B] react/index.cjs.js [605B] react/esm/index.esm.js [581B] esm/index.esm.js [948B] react/index.d.ts [690B] react/package.json [460B] react/README.md [12918B] README.md [8682B] 
-I0522 22:25:18.206908   12608 installsdk.go:86] Running command: /home/ghost/.nvm/versions/node/v22.19.0/bin/npm install file:src/dataconnect-generated
-I0522 22:25:43.879324   12608 load.go:109] Finished reloading
+I0523 19:52:41.118891   10387 codegen.go:101] [connector "example" javascriptSdk] Generating sources into "/home/ghost/Documents/dev/node/skild/src/dataconnect-generated"
+I0523 19:52:41.122297   10387 collector.go:107] schema extensions wrote into "/home/ghost/Documents/dev/node/skild/dataconnect/.dataconnect/schema"
+Generated sources: main/relation.gql [6578B] main/query.gql [2404B] main/mutation.gql [6444B] main/implicit.gql [266B] prelude.gql [82799B] main/input.gql [16026B] 
+I0523 19:52:41.122685   10387 collector.go:107] connector "example" javascriptSdk wrote into "/home/ghost/Documents/dev/node/skild/src/dataconnect-generated"
+Generated sources: package.json [853B] react/index.d.ts [690B] react/README.md [12918B] esm/package.json [17B] react/index.cjs.js [605B] .guides/usage.md [1571B] .guides/setup.md [1682B] index.d.ts [1661B] index.cjs.js [1078B] react/package.json [460B] react/esm/index.esm.js [581B] esm/index.esm.js [948B] README.md [8682B] react/esm/package.json [17B] .guides/config.json [236B] 
+I0523 19:52:41.122941   10387 installsdk.go:55] Package @dataconnect/generated is already installed. Skipping installation
+I0523 19:52:41.122949   10387 load.go:109] Finished reloading
+I0523 19:52:41.123296   10387 dev.go:104] Listening on address (HTTP + gRPC): 127.0.0.1:50001
+I0523 19:52:41.312635   10387 engine.go:209] [projects/emulator/locations/emulator/services/skild-62214-service 237c] ExecuteGraphqlRead query IntrospectionQuery: succeeded. 
