@@ -1,3 +1,5 @@
+<img width="1914" height="930" alt="image" src="https://github.com/user-attachments/assets/0574dfd2-19dc-442b-b04e-d027a5160cf8" />
+
 # Getting Started
 
 To run this application:
