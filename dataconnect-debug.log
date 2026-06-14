@@ -1,13 +1,13 @@
-I0523 19:52:41.111041   10387 load.go:31] Reloading schema and connectors...
-I0523 19:52:41.115266   10387 control.go:100] [projects/emulator/locations/emulator/services/skild-62214-service 237c] UpdateResources(): done
+I0614 10:52:06.731715   10461 load.go:31] Reloading schema and connectors...
+I0614 10:52:06.737150   10461 control.go:100] [projects/emulator/locations/emulator/services/skild-62214-service f3cb] UpdateResources(): done
 Main schema: sources: schema/schema.gql [492B] 
 Connector "example": sources: connectors/query.gql [462B] 
-I0523 19:52:41.118891   10387 codegen.go:101] [connector "example" javascriptSdk] Generating sources into "/home/ghost/Documents/dev/node/skild/src/dataconnect-generated"
-I0523 19:52:41.122297   10387 collector.go:107] schema extensions wrote into "/home/ghost/Documents/dev/node/skild/dataconnect/.dataconnect/schema"
-Generated sources: main/relation.gql [6578B] main/query.gql [2404B] main/mutation.gql [6444B] main/implicit.gql [266B] prelude.gql [82799B] main/input.gql [16026B] 
-I0523 19:52:41.122685   10387 collector.go:107] connector "example" javascriptSdk wrote into "/home/ghost/Documents/dev/node/skild/src/dataconnect-generated"
-Generated sources: package.json [853B] react/index.d.ts [690B] react/README.md [12918B] esm/package.json [17B] react/index.cjs.js [605B] .guides/usage.md [1571B] .guides/setup.md [1682B] index.d.ts [1661B] index.cjs.js [1078B] react/package.json [460B] react/esm/index.esm.js [581B] esm/index.esm.js [948B] README.md [8682B] react/esm/package.json [17B] .guides/config.json [236B] 
-I0523 19:52:41.122941   10387 installsdk.go:55] Package @dataconnect/generated is already installed. Skipping installation
-I0523 19:52:41.122949   10387 load.go:109] Finished reloading
-I0523 19:52:41.123296   10387 dev.go:104] Listening on address (HTTP + gRPC): 127.0.0.1:50001
-I0523 19:52:41.312635   10387 engine.go:209] [projects/emulator/locations/emulator/services/skild-62214-service 237c] ExecuteGraphqlRead query IntrospectionQuery: succeeded. 
+I0614 10:52:06.742194   10461 codegen.go:101] [connector "example" javascriptSdk] Generating sources into "/home/ghost/Documents/dev/node/skild/src/dataconnect-generated"
+I0614 10:52:06.746506   10461 collector.go:107] schema extensions wrote into "/home/ghost/Documents/dev/node/skild/dataconnect/.dataconnect/schema"
+Generated sources: main/relation.gql [6578B] main/query.gql [2404B] main/mutation.gql [6444B] prelude.gql [82799B] main/implicit.gql [266B] main/input.gql [16026B] 
+I0614 10:52:06.746857   10461 collector.go:107] connector "example" javascriptSdk wrote into "/home/ghost/Documents/dev/node/skild/src/dataconnect-generated"
+Generated sources: esm/index.esm.js [948B] .guides/config.json [236B] index.d.ts [1661B] esm/package.json [17B] react/package.json [460B] react/esm/package.json [17B] react/index.cjs.js [605B] react/README.md [12918B] .guides/usage.md [1571B] package.json [853B] react/index.d.ts [690B] react/esm/index.esm.js [581B] index.cjs.js [1078B] README.md [8682B] .guides/setup.md [1682B] 
+I0614 10:52:06.747215   10461 installsdk.go:55] Package @dataconnect/generated is already installed. Skipping installation
+I0614 10:52:06.747228   10461 load.go:109] Finished reloading
+I0614 10:52:06.748588   10461 dev.go:104] Listening on address (HTTP + gRPC): 127.0.0.1:50001
+I0614 10:52:06.788559   10461 engine.go:209] [projects/emulator/locations/emulator/services/skild-62214-service f3cb] ExecuteGraphqlRead query IntrospectionQuery: succeeded. 
